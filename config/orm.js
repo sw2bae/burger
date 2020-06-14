@@ -32,12 +32,12 @@ const orm = {
           });
       });
   },
-  updateOne: function(table, objCol ,condition) {
+  updateOne: function(table ,condition) {
       return new Promise((resolve,reject)=>{
           var queryString = "UPDATE " + table;
       
           queryString += " SET ";
-          queryString += objCol;
+          queryString += "devoured";
           queryString += "= true";
           queryString += " WHERE ";
           queryString += condition;
