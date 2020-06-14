@@ -19,7 +19,7 @@ const orm = {
           queryString += " (";
           queryString += cols.toString();
           queryString += ") ";
-          queryString += "VALUES (?,?)";
+          queryString += "VALUES (?)";
       
           console.log(queryString);
       
