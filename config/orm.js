@@ -1,6 +1,6 @@
-var connection = require("../config/connection.js");
+const connection = require("../config/connection.js");
 
-var orm = {
+const orm = {
     selectAll: function(tableInput) {
     return new Promise((resolve,reject)=>{
         var queryString = "SELECT * FROM " + tableInput + ";";
@@ -19,9 +19,7 @@ var orm = {
           queryString += " (";
           queryString += cols.toString();
           queryString += ") ";
-          queryString += "VALUES (";
-          queryString += vals.toString();
-          queryString += ") ";
+          queryString += "VALUES (?,?)";
       
           console.log(queryString);
       
@@ -34,14 +32,13 @@ var orm = {
           });
       });
   },
-  updateOne: function(table, objCol, vals ,condition) {
+  updateOne: function(table, objCol ,condition) {
       return new Promise((resolve,reject)=>{
           var queryString = "UPDATE " + table;
       
           queryString += " SET ";
           queryString += objCol;
-          queryString += "=";
-          queryString += vals;
+          queryString += "= true";
           queryString += " WHERE ";
           queryString += condition;
       
