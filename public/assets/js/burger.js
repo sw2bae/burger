@@ -13,6 +13,7 @@ $(function() {
       }).then(
         function() {
           location.reload();
+          // Dont know why this location.reload(); is not working...
         }
       );
     });
