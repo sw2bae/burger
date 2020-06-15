@@ -21,8 +21,6 @@ const orm = {
           queryString += ") ";
           queryString += "VALUES (?)";
       
-          console.log(queryString);
-      
           connection.query(queryString, vals, function(err, result) {
             if (err) {
               reject(err);
@@ -41,8 +39,7 @@ const orm = {
           queryString += "= true";
           queryString += " WHERE ";
           queryString += condition;
-      
-          console.log(queryString);
+    
           connection.query(queryString, function(err, result) {
             if (err) {
               reject(err);

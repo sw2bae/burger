@@ -1,6 +1,6 @@
 $(function() {
-    $(".change-devour").on("click", function(event) {
-      event.preventDefault();
+    $(".change-devour").on("click", function() {
+      // event.preventDefault();
       var id = $(this).data("id");
       var newDevour = $(this).data("newDevour");
   
@@ -22,16 +22,17 @@ $(function() {
       var newburger = {
         burger_name: $("#bg").val().trim(),
       };
-  
-      $.ajax("/api/burgers", {
-        type: "POST",
-        data: newburger
-      }).then(
-        function() {
-          location.reload();
-        }
+      if (newburger.burger_name.length === 0){
+        alert("Please Input Your Burger");
+      }else{
+        $.ajax("/api/burgers", {
+          type: "POST",
+          data: newburger
+        }).then(
+          function() {
+            location.reload();
+          }
       );
+      }
     });
   });
-
-  
