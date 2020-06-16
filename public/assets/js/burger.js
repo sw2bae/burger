@@ -11,10 +11,10 @@ $(function() {
         type: "PUT",
         data: newDevourState
       }).then(
-        function() {
-          location.reload();
+        // function() {
+          location.reload()
           // Dont know why this location.reload(); is not working...
-        }
+        // }
       );
     });
   
@@ -30,9 +30,9 @@ $(function() {
           type: "POST",
           data: newburger
         }).then(
-          function() {
-            location.reload();
-          }
+          // function() {
+            location.reload()
+          // }
       );
       }
     });
